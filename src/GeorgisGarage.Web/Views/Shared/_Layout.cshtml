@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GeorgisGarage.Web</title>
+    <title>@ViewData["Title"] - GeorgisGarage</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,12 +26,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GeorgisGarage.Web</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GeorgisGarage</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Shop">Shop</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
@@ -45,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - GeorgisGarage.Web</p>
+            <p>&copy; 2019 - GeorgisGarage</p>
         </footer>
     </div>
 

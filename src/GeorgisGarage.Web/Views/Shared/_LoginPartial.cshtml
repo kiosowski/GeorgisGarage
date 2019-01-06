@@ -1,7 +1,8 @@
+@using GeorgisGarage.Web.Areas.Identity.Data
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<GeorgisGarageUser> SignInManager
+@inject UserManager<GeorgisGarageUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
