@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = this.User.Identity.Name;
+}
+<h2>Моят акаунт</h2>
+
+<partial name="_ManageNav" />
+<main>
+    @RenderBody()
+</main>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

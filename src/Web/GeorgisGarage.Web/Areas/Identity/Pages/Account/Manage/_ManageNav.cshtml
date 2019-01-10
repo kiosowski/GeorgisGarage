@@ -1,0 +1,32 @@
+﻿@using GeorigsGarage.Data.Models
+@inject SignInManager<User> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+
+<nav class="navbar navbar-expand-md navbar-light bg-light text-black-50 pt-0 pb-0">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="@ManageNavPages.IndexNavClass(ViewContext) nav-item nav-link"><a asp-page="./Index" class="nav-link">Профил</a></li>
+            <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext) nav-item nav-link"><a id="change-password" asp-page="./ChangePassword" class="nav-link">Парола</a></li>
+            @if (hasExternalLogins)
+            {
+                <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext) nav-item nav-link"><a id="external-login" asp-page="./ExternalLogins" class="nav-link">Външни източници</a></li>
+            }
+            <li class="@ManageNavPages.PersonalDataNavClass(ViewContext) nav-item nav-link"><a asp-page="./PersonalData" class="nav-link">Лична информация</a></li>
+            <li class="nav-item nav-link"><a asp-area="Services" asp-controller="Home" asp-action="MyRoads" class="nav-link">Мой трасета</a></li>
+            <li class="nav-item nav-link"><a asp-area="Shop" asp-controller="Orders" asp-action="MyOrders" class="nav-link">Мой поръчки</a></li>
+
+
+            @if (User.IsInRole("Admin")||User.IsInRole("Owner"))
+            {
+                <li class="nav-item nav-link"><a asp-area="Administration" asp-controller="AdministrationIndex" asp-action="Index" class="nav-link alert-dark">Към администраторския панел</a></li>
+            }
+        </ul>
+    </div>
+
+</nav>
