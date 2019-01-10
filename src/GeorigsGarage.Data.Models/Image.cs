@@ -22,7 +22,7 @@ namespace GeorigsGarage.Data.Models
         public bool IsMain { get; set; }
 
         public string ServiceId { get; set; }
-        public virtual Service Road { get; set; }
+        public virtual Service Service { get; set; }
 
         //Posted by
         public string UserId { get; set; }

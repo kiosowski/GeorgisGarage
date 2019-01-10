@@ -12,9 +12,9 @@ namespace GeorigsGarage.Data.Models
         }
         public string Id { get; set; }
 
-        public string RoadId { get; set; }
+        public string ServiceId { get; set; }
 
-        public virtual Service Road { get; set; }
+        public virtual Service Service { get; set; }
 
         public string UserId { get; set; }
 

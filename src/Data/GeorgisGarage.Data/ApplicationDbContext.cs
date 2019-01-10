@@ -11,7 +11,7 @@ namespace GeorgisGarage.Data
             : base(options)
         {
         }
-        public DbSet<CoverPhotoService> CoverPhotoRoads { get; set; }
+        public DbSet<CoverPhotoService> CoverPhotoService { get; set; }
 
         public DbSet<Service> Services { get; set; }
 
@@ -50,7 +50,7 @@ namespace GeorgisGarage.Data
 
             builder.Entity<Service>()
                 .HasMany(x => x.Comments)
-                .WithOne(x => x.Road)
+                .WithOne(x => x.Service)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Comment>()

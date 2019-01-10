@@ -5,6 +5,8 @@ namespace GeorigsGarage.Data.Models
     public class Product
     {
         public string Id { get; set; }
+
+        public string ImageId { get; set; }
         public virtual ProductImage Image { get; set; }
 
         public string Name { get; set; }

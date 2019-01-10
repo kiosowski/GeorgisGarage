@@ -403,7 +403,10 @@ namespace GeorgisGarage.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CoverPhotoRoads",
+                name: "" +
+                      "CoverPhotoRoads" +
+                      "" +
+                      "",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),

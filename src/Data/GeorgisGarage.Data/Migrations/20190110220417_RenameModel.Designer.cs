@@ -4,14 +4,16 @@ using GeorgisGarage.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeorgisGarage.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190110220417_RenameModel")]
+    partial class RenameModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,7 +86,7 @@ namespace GeorgisGarage.Data.Migrations
 
                     b.HasIndex("ImageId");
 
-                    b.ToTable("CoverPhotoService");
+                    b.ToTable("CoverPhotoRoads");
                 });
 
             modelBuilder.Entity("GeorigsGarage.Data.Models.Image", b =>
@@ -174,8 +176,6 @@ namespace GeorgisGarage.Data.Migrations
                     b.Property<int>("Count");
 
                     b.Property<string>("Description");
-
-                    b.Property<string>("ImageId");
 
                     b.Property<bool>("IsHidden");
 

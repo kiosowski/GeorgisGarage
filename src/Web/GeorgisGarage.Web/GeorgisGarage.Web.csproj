@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\GeorgisGarage.Data\GeorgisGarage.Data.csproj" />
+    <ProjectReference Include="..\..\Data\GeorgisGarage.Services\GeorgisGarage.Services.csproj" />
     <ProjectReference Include="..\..\GeorigsGarage.Data.Models\GeorigsGarage.Data.Models.csproj" />
   </ItemGroup>
 
@@ -20,6 +21,21 @@
     <Content Update="Views\Home\About.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Administraion\Views\" />
+    <Folder Include="Areas\Services\Views\" />
+    <Folder Include="Areas\Services\Controllers\" />
+    <Folder Include="Areas\Shop\Views\" />
+    <Folder Include="Areas\Shop\Models\" />
+    <Folder Include="Areas\Shop\Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>C:\Users\Kiosowski\.nuget\packages\automapper\5.1.1\lib\netstandard1.3\AutoMapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
