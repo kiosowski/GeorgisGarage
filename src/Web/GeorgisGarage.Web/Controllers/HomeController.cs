@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using GeorgisGarage.Services.Contracts;
+using GeorgisGarage.Web.Areas.Services.Models.ServicesIndex;
 using Microsoft.AspNetCore.Mvc;
 using GeorgisGarage.Web.Models;
 
@@ -10,9 +13,32 @@ namespace GeorgisGarage.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IServicesIndexService servicesService;
+        private readonly IImageService imageService;
+        private readonly IMapper mapper;
+
+        public HomeController(IServicesIndexService servicesService, IImageService imageService, IMapper mapper)
+        {
+            this.servicesService = servicesService;
+            this.imageService = imageService;
+            this.mapper = mapper;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var services = this.servicesService.GetTopServices();
+
+            var model = new List<ServiceViewModel>();
+
+            foreach (var service in services)
+            {
+                var coverPhoto = this.imageService.ReturnImageWithGiverDimensions(service.CoverPhoto.Image, 1500, 300, "limit");
+                var token = mapper.Map<ServiceViewModel>(service);
+                token.CoverPhoto = coverPhoto;
+                model.Add(token);
+            }
+
+            return View(model);
         }
         
         public IActionResult About()

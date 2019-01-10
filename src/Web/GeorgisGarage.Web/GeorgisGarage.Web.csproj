@@ -26,10 +26,7 @@
   <ItemGroup>
     <Folder Include="Areas\Administraion\Views\" />
     <Folder Include="Areas\Services\Views\" />
-    <Folder Include="Areas\Services\Controllers\" />
     <Folder Include="Areas\Shop\Views\" />
-    <Folder Include="Areas\Shop\Models\" />
-    <Folder Include="Areas\Shop\Controllers\" />
   </ItemGroup>
 
   <ItemGroup>

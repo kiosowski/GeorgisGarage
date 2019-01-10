@@ -211,7 +211,7 @@ namespace GeorgisGarage.Services
         public Service GetServiceByImage(Image image)
         {
             var img = this.context.Images.First(x => x.Id == image.Id);
-            var road = this.context.Services.Find(img.Road.Id);
+            var road = this.context.Services.Find(img.Service.Id);
             return road;
         }
 

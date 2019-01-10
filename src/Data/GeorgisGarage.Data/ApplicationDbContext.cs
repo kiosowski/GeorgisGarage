@@ -45,7 +45,7 @@ namespace GeorgisGarage.Data
                 .HasForeignKey<CoverPhotoService>(x => x.Id);
             builder.Entity<Service>()
                 .HasMany(x => x.Photos)
-                .WithOne(x => x.Road)
+                .WithOne(x => x.Service)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Service>()
