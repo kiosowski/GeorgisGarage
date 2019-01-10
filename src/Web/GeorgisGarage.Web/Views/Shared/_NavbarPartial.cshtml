@@ -1,0 +1,28 @@
+﻿<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top rounded">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Georgi's Garage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
+                </li>
+                <li class="nav-item">
+                    <partial name="_ServicePartial.cshtml" />
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Актуална пътнка обстановка</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Shop" asp-controller="Products" asp-action="All">Магазин</a>
+                </li>
+            </ul>
+            
+
+            <partial name="_LoginPartial.cshtml" />
+
+        </div>
+    </div>
+</nav>

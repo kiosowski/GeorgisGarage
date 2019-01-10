@@ -1,26 +1,43 @@
 ﻿@using GeorigsGarage.Data.Models
 @using Microsoft.AspNetCore.Identity
-
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
-
 @if (SignInManager.IsSignedIn(User))
 {
+
+
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        <ul class="nav navbar-nav ">
+            <li class="nav-item">
+                <div class="dropdown show collapse navbar-collapse d-flex justify-content-between " id="navbarNav">
+                    <a asp-area="Roads" asp-controller="Home" asp-action="Index" class="dropdown-toggle nav-link nav-link-dark " id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="False">
+                        Създай
+                    </a>
+                    <div class="dropdown-menu mt-2" aria-labelledby="dropDownMenuLink">
+                        <a class="dropdown-item" asp-area="Roads" asp-controller="Home" asp-action="Create">Създай трасе</a>
+                        @if (User.IsInRole("Admin") || User.IsInRole("Owner"))
+                        {
+                            <a class="dropdown-item" asp-area="Administration" asp-controller="Products" asp-action="CreateProduct">Добави нов продукт</a>
+                        }
+                    </div>
+                </div>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="nav-link">@UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                <a class="nav-link" asp-area="Shop" asp-controller="Cart" asp-action="MyCart"><div style="font-size: 0.5rem"><span class="fa fa-3x fa-shopping-cart"> </span></div> </a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-warning  nav-item navbar-btn navbar-link">Изход</button>
             </li>
         </ul>
     </form>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="Identity" asp-page="/Account/Register">Регистрирай се</a></li>
-        <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item "><a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Регистрирай се</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
     </ul>
 }

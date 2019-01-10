@@ -59,28 +59,28 @@ namespace GeorgisGarage.Web
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
+            //services.AddAuthentication().AddFacebook(facebookOptions =>
+            //{
+            //    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+            //    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            //});
 
-         //   var account = new Account(
-         //       this.Configuration.GetSection("Cloudinary").GetSection("CloudName").Value,
-         //      this.Configuration.GetSection("Cloudinary").GetSection("APIKey").Value,
-         ///       this.Configuration.GetSection("Cloudinary").GetSection("APISecret").Value);
+            //var account = new Account(
+            //  this.Configuration.GetSection("Cloudinary").GetSection("CloudName").Value,
+            // this.Configuration.GetSection("Cloudinary").GetSection("APIKey").Value,
+            //   this.Configuration.GetSection("Cloudinary").GetSection("APISecret").Value);
 
-        //        var cloudinary = new Cloudinary(account);
+            //var cloudinary = new Cloudinary(account);
 
-              //  services.AddSingleton(new Cloudinary(account));
-            
+            //services.AddSingleton(new Cloudinary(account));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             //app.UseDatabaseMigration();
-          //  app.AddOwnerUser();
+            //  app.AddOwnerUser();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

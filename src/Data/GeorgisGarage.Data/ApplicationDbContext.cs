@@ -70,7 +70,11 @@ namespace GeorgisGarage.Data
                 .WithOne(x => x.Cart)
                 .HasForeignKey<User>(x => x.CartId)
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
+            builder.Entity<Service>()
+                .Property(x => x.AverageRating)
+                .UsePropertyAccessMode(PropertyAccessMode.Field);
+
         }
     }
 }

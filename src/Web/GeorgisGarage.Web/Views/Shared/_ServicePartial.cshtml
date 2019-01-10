@@ -1,0 +1,19 @@
+﻿<div class="dropdown show collapse navbar-collapse d-flex  " id="navbarNav">
+    <a class="nav-link" asp-area="Roads" asp-controller="Home" asp-action="Index">
+        Услуги
+    </a>
+    <span class="dropdown-toggle nav-link nav-link-dark " id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="False"></span>
+
+    <div class="dropdown-menu mt-2" aria-labelledby="dropDownMenuLink">
+        <a class="dropdown-item" asp-area="Roads" asp-controller="Categories" asp-action="All">Всички услуги</a>
+
+        <a class="dropdown-item" asp-area="Roads" asp-controller="Categories" asp-action="TopRoads">Услуги с най-висок рейтинг</a>
+
+        <a class="dropdown-item" asp-area="Roads" asp-controller="Categories" asp-action="LatestRoads">Последни услуги</a>
+
+        <a class="dropdown-item" asp-area="Roads" asp-controller="Categories" asp-action="LongestRoads">Услуги отнемащи най-много време</a>
+
+
+    </div>
+</div>
+
