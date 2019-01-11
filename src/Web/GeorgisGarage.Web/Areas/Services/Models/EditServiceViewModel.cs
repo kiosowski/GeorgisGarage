@@ -20,12 +20,12 @@ namespace GeorgisGarage.Web.Areas.Services.Models
         [Required(ErrorMessage = "Това поле е задължително")]
         [Display(Name = "Начален час")]
         [DataType(DataType.Text)]
-        public string StartingPoint { get; set; }
+        public string StartedTime { get; set; }
 
         [Required(ErrorMessage = "Това поле е задължително")]
         [Display(Name = "Час на приключване")]
         [DataType(DataType.Text)]
-        public string EndPoint { get; set; }
+        public string EndTime { get; set; }
 
         [Display(Name = "Времетраене")]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter valid road length.")]

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using GeorgisGarage.Services.Contracts;
 using GeorgisGarage.Web.Areas.Services.Models.ServicesIndex;
-using Microsoft.AspNetCore.Mvc;
 using GeorgisGarage.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GeorgisGarage.Web.Controllers
 {

@@ -92,8 +92,8 @@ namespace GeorgisGarage.Services
 
         public Service GetServiceById(string id)
         {
-            var road = this.context.Services.FirstOrDefault(x => x.Id == id);
-            return road;
+            var service = this.context.Services.FirstOrDefault(x => x.Id == id);
+            return service;
         }
 
         public bool Create(string serviceName, string startTime, string endTime, double serviceTime,
@@ -160,14 +160,14 @@ namespace GeorgisGarage.Services
 
         public T Details<T>(string id)
         {
-            var road = this.context.Services.Find(id);
+            var service = this.context.Services.Find(id);
 
-            if (road == null)
+            if (service == null)
             {
                 return default(T);
             }
 
-            var model = this.mapper.Map<T>(road);
+            var model = this.mapper.Map<T>(service);
 
             return model;
         }
@@ -199,13 +199,13 @@ namespace GeorgisGarage.Services
 
         public ICollection<Service> GetTopServices()
         {
-            var roads = this.context.Services.OrderByDescending(x => x.AverageRating)
+            var services = this.context.Services.OrderByDescending(x => x.AverageRating)
                 .Take(ServicesShownOnPage)
                 .ToList()
                 .OrderByDescending(x => x.AverageRating)
                 .ToList();
 
-            return roads;
+            return services;
         }
 
         public Service GetServiceByImage(Image image)

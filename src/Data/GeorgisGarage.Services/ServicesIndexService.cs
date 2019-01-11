@@ -21,40 +21,40 @@ namespace GeorgisGarage.Services
 
         public ICollection<Service> GetAllServices()
         {
-            var roads = this.context.Services.Take(ImagesCountForCarousel).ToList();
+            var services = this.context.Services.Take(ImagesCountForCarousel).ToList();
 
-            return roads;
+            return services;
         }
 
         public ICollection<Service> GetLatestServices()
         {
-            var roads = this.context.Services.OrderByDescending(x => x.PostedOn).Take(ImagesCountForCarousel).ToList();
+            var services = this.context.Services.OrderByDescending(x => x.PostedOn).Take(ImagesCountForCarousel).ToList();
 
-            return roads;
+            return services;
         }
 
         public ICollection<Service> GetLongestServices()
         {
-            var roads = this.context.Services.OrderByDescending(x => x.ServiceTime).Take(ImagesCountForCarousel).ToList();
+            var services = this.context.Services.OrderByDescending(x => x.ServiceTime).Take(ImagesCountForCarousel).ToList();
 
-            return roads;
+            return services;
         }
 
         public ICollection<Service> GetTopServices()
         {
-            var roads = this.context.Services.OrderByDescending(x => x.AverageRating)
+            var services = this.context.Services.OrderByDescending(x => x.AverageRating)
                 .Take(ImagesCountForCarousel)
                 .ToList()
                 .OrderByDescending(x => x.AverageRating)
                 .ToList();
 
-            return roads;
+            return services;
         }
 
         public ICollection<Service> GetCurrentUserServicesById(string id)
         {
-            var roads = this.context.Services.Where(x => x.User.Id == id).ToList();
-            return roads;
+            var services = this.context.Services.Where(x => x.User.Id == id).ToList();
+            return services;
         }
     }
 }

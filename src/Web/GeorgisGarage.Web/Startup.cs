@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using CloudinaryDotNet;
 using GeorgisGarage.Data;
+using GeorgisGarage.Services;
+using GeorgisGarage.Services.Contracts;
+using GeorgisGarage.Web.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -14,6 +19,7 @@ using GeorgisGarage.Web.Models;
 using GeorigsGarage.Data.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace GeorgisGarage.Web
 {
@@ -65,22 +71,41 @@ namespace GeorgisGarage.Web
             //    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             //});
 
-            //var account = new Account(
-            //  this.Configuration.GetSection("Cloudinary").GetSection("CloudName").Value,
-            // this.Configuration.GetSection("Cloudinary").GetSection("APIKey").Value,
-            //   this.Configuration.GetSection("Cloudinary").GetSection("APISecret").Value);
+            var account = new Account(
+              this.Configuration.GetSection("Cloudinary").GetSection("CloudName").Value,
+             this.Configuration.GetSection("Cloudinary").GetSection("APIKey").Value,
+               this.Configuration.GetSection("Cloudinary").GetSection("APISecret").Value);
 
-            //var cloudinary = new Cloudinary(account);
+            var cloudinary = new Cloudinary(account);
 
-            //services.AddSingleton(new Cloudinary(account));
+            services.AddSingleton(new Cloudinary(account));
+            var mappingConfig = new MapperConfiguration(mc =>
+                mc.AddProfile(new MappingProfile())
+            );
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+            services.AddScoped<IServicesIndexService, ServicesIndexService>();
+            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<IServicesService, ServicesService>();
+            services.AddTransient<IImageService, ImageService>();
+            services.AddScoped<IVideoService, VideoService>();
+            services.AddScoped<IProductsService, ProductsService>();
+            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+            services.AddScoped<ICommentsService, CommentsService>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSession();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //app.UseDatabaseMigration();
-            //  app.AddOwnerUser();
+            app.UseDatabaseMigration();
+              app.AddOwnerUser();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

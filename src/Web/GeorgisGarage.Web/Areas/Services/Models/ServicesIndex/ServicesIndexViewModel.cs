@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GeorgisGarage.Web.Areas.Administraion.Models.Services;
+﻿using System.Collections.Generic;
 
 namespace GeorgisGarage.Web.Areas.Services.Models.ServicesIndex
 {
