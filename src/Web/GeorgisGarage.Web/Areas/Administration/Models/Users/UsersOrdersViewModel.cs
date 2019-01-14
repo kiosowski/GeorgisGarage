@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Users
+﻿namespace GeorgisGarage.Web.Areas.Administration.Models.Users
 {
     public class UsersOrdersViewModel
     {

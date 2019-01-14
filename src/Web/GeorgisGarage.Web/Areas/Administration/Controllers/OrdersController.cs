@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using GeorgisGarage.Services.Contracts;
-using GeorgisGarage.Web.Areas.Administraion.Models.Orders;
-using GeorgisGarage.Web.Areas.Administraion.Models.Users;
+using GeorgisGarage.Web.Areas.Administration.Models.Orders;
+using GeorgisGarage.Web.Areas.Administration.Models.Users;
 using GeorgisGarage.Web.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Controllers
+namespace GeorgisGarage.Web.Areas.Administration.Controllers
 {
     [Area("Administration")]
     [Authorize(Roles = Constants.AdminAndOwnerRoleAuth)]

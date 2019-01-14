@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GeorigsGarage.Data.Models;
+﻿using GeorigsGarage.Data.Models;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Services
+namespace GeorgisGarage.Web.Areas.Administration.Models.Services
 {
     public class ServicesViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using GeorigsGarage.Data.Models;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Orders
+namespace GeorgisGarage.Web.Areas.Administration.Models.Orders
 {
     public class OrderViewModel
     {

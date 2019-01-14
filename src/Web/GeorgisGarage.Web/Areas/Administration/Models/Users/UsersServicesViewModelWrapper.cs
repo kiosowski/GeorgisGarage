@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using GeorigsGarage.Data.Models;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Users
+namespace GeorgisGarage.Web.Areas.Administration.Models.Users
 {
     public class UsersServicesViewModelWrapper
     {

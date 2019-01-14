@@ -1,0 +1,44 @@
+﻿@using GeorigsGarage.Data.Models.Enums
+@model List<GeorgisGarage.Web.Areas.Administration.Models.Users.OrderDetailsViewModel>
+
+@{
+    ViewData["Title"] = "Детайли за поръчката";
+}
+
+
+<div class="justify-content-center row h3 text-light">@ViewData["Title"]</div>
+<hr />
+<div class="row col-12">
+    <div class="container-fluid">
+        <table class="table table-dark table-borderless table-hover rounded">
+            <thead>
+                <tr class="row">
+                    <th scope="col" class="col-3 d-flex justify-content-center">Id</th>
+                    <th scope="col" class="col-2 d-flex justify-content-center">Име</th>
+                    <th scope="col" class="col-1 d-flex justify-content-center">Цена за бр.</th>
+                    <th scope="col" class="col-2 d-flex justify-content-center">Количество</th>
+                    <th scope="col" class="col-2 d-flex justify-content-center">Общо</th>
+                    <th scope="col" class="col-2 d-flex justify-content-center">Още</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in @Model)
+                {
+                    <tr class="row">
+                        <td class="col-3 d-flex justify-content-center">@product.Id</td>
+                        <td class="col-2 d-flex justify-content-center">@product.Name</td>
+                        <td class="col-1 d-flex justify-content-center">@product.PriceForOne</td>
+                        <td class="col-2 d-flex justify-content-center">@product.Quantity</td>
+                        <td class="col-2 d-flex justify-content-center">@product.Total</td>
+                        <td class="col-2 d-flex justify-content-center">
+                            <div class="btn-group" role="group" aria-label="Admin-func">
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Products
+namespace GeorgisGarage.Web.Areas.Administration.Models.Products
 {
     public class CreateProductViewModel
     {

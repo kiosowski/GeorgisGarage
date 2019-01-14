@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using GeorgisGarage.Web.Areas.Administraion.Models.Orders;
-using GeorgisGarage.Web.Areas.Administraion.Models.Products;
-using GeorgisGarage.Web.Areas.Administraion.Models.Services;
-using GeorgisGarage.Web.Areas.Administraion.Models.Users;
+using GeorgisGarage.Web.Areas.Administration.Models.Orders;
+using GeorgisGarage.Web.Areas.Administration.Models.Products;
+using GeorgisGarage.Web.Areas.Administration.Models.Services;
+using GeorgisGarage.Web.Areas.Administration.Models.Users;
 using GeorgisGarage.Web.Areas.Services.Models;
 using GeorgisGarage.Web.Areas.Services.Models.Comments;
 using GeorgisGarage.Web.Areas.Services.Models.Comments.Replies;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GeorgisGarage.Web.Areas.Administraion.Models.Products
+namespace GeorgisGarage.Web.Areas.Administration.Models.Products
 {
     public class ProductViewModel
     {

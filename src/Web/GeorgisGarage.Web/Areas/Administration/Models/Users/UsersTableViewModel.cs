@@ -1,4 +1,4 @@
-﻿namespace GeorgisGarage.Web.Areas.Administraion.Models.Users
+﻿namespace GeorgisGarage.Web.Areas.Administration.Models.Users
 {
     public class UsersTableViewModel
     {
