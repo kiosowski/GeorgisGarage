@@ -1,8 +1,8 @@
-﻿@model ICollection<GeorgisGarage.Web.Areas.Services.Models.ServicesIndex.ServiceViewModel>
+﻿@model ICollection<GeorgisGarage.Web.Areas.Administration.Models.Services.ServicesViewModel>
 @{
-    ViewData["Title"] = "AllRoads";
+    ViewData["Title"] = "AllServices";
 }
-<div class="justify-content-center row h3 text-light">Всички трасета</div>
+<div class="justify-content-center row h3 text-light">Всички услуги</div>
 <hr />
 <div class="row col-12">
     <div class="container-fluid">
@@ -18,19 +18,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var road in @Model)
+                @foreach (var service in @Model)
                 {
                     <tr class="row">
-                        <td class="col-3 d-flex justify-content-center">@road.Id</td>
-                        <td class="col-2 d-flex justify-content-center">@road.Name</td>
-                        <td class="col-2 d-flex justify-content-center">@road.PostedBy</td>
-                        <td class="col-1 d-flex justify-content-center">@road.Comments</td>
-                        <td class="col-1 d-flex justify-content-center">@road.Rating</td>
+                        <td class="col-3 d-flex justify-content-center">@service.Id</td>
+                        <td class="col-2 d-flex justify-content-center">@service.Name</td>
+                        <td class="col-2 d-flex justify-content-center">@service.PostedBy</td>
+                        <td class="col-1 d-flex justify-content-center">@service.Comments</td>
+                        <td class="col-1 d-flex justify-content-center">@service.Rating</td>
                         <td class="col-3 d-flex justify-content-center">
                             <div class="btn-group btn-group-sm" role="group" aria-label="Admin-func">
-                                <a class="btn btn-outline-danger" asp-area="Roads" asp-controller="Home" asp-action="EditRoad" asp-route-id="@road.Id">Редактирай</a>
-                                <a class="btn btn-outline-danger" asp-area="Roads" asp-controller="Home" asp-action="Road" asp-route-id="@road.Id">Детайли</a>
-                                <a class="btn btn-outline-danger" asp-area="Roads" asp-controller="Home" asp-action="DeleteRoad" asp-route-id="@road.Id">Изтрий</a>
+                                <a class="btn btn-outline-danger" asp-area="Services" asp-controller="Home" asp-action="EditService" asp-route-id="@service.Id">Редактирай</a>
+                                <a class="btn btn-outline-danger" asp-area="Services" asp-controller="Home" asp-action="Service" asp-route-id="@service.Id">Детайли</a>
+                                <a class="btn btn-outline-danger" asp-area="Services" asp-controller="Home" asp-action="DeleteService" asp-route-id="@service.Id">Изтрий</a>
                             </div>
                         </td>
                     </tr>

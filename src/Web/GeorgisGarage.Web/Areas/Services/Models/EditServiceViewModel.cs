@@ -49,10 +49,10 @@ namespace GeorgisGarage.Web.Areas.Services.Models
 
         public DateTime PostedOn { get; set; }
 
-        [Display(Name = "")] public int ViewRating { get; set; }
+        [Display(Name = "")] public int MaterialRating { get; set; }
 
-        [Display(Name = "")] public int SurfaceRating { get; set; }
+        [Display(Name = "")] public int PerformanceRating { get; set; }
 
-        [Display(Name = "")] public int PleasureRating { get; set; }
+        [Display(Name = "")] public int TimeRating { get; set; }
     }
 }

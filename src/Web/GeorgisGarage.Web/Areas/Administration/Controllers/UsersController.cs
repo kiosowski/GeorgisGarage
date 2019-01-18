@@ -42,14 +42,14 @@ namespace GeorgisGarage.Web.Areas.Administration.Controllers
             return View(model);
         }
 
-        public IActionResult UsersRoads(string id)
+        public IActionResult UsersServices(string id)
         {
             var roads = this.servicesIndexService.GetCurrentUserServicesById(id);
 
             var model = new UsersServicesViewModelWrapper
             {
                 User = this.usersService.GetUserById(id),
-                UsersRoadsViewModels = mapper.Map<List<UsersServicesViewModel>>(roads)
+                UsersServicesViewModels = mapper.Map<List<UsersServicesViewModel>>(roads)
             };
 
             return this.View(model);

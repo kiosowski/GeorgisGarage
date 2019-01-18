@@ -1,0 +1,16 @@
+﻿@model IEnumerable<GeorgisGarage.Web.Areas.Services.Models.ServicesIndex.ServiceViewModel>
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="container-image">
+        <a asp-area="Services" asp-controller="Home" asp-action="Service" asp-route-id="@item.Id">
+            <img class="img-fluid rounded" src="@item.CoverPhoto" />
+        </a>
+        <div class="bottom-right">@item.ServiceName</div>
+        <div class="bottom-left-info"> Добавено на: @item.PostedOn от @item.PostedBy.</div>
+    </div>
+
+}

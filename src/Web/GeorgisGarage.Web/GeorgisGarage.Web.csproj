@@ -24,8 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Administration\Views\Users\" />
-    <Folder Include="Areas\Services\Views\" />
     <Folder Include="Areas\Shop\Views\" />
   </ItemGroup>
 

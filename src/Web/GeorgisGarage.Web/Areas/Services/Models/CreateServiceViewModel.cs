@@ -54,12 +54,12 @@ namespace GeorgisGarage.Web.Areas.Services.Models
 
 
         [Display(Name = "")]
-        public int View { get; set; }
+        public int Material { get; set; }
 
         [Display(Name = "")]
-        public int Surface { get; set; }
+        public int Performance { get; set; }
 
         [Display(Name = "")]
-        public int Pleasure { get; set; }
+        public int Time { get; set; }
     }
 }

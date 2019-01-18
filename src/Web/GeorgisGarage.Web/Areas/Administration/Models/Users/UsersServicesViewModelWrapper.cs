@@ -7,6 +7,6 @@ namespace GeorgisGarage.Web.Areas.Administration.Models.Users
     {
         public User User { get; set; }
 
-        public ICollection<UsersServicesViewModel> UsersRoadsViewModels { get; set; }
+        public ICollection<UsersServicesViewModel> UsersServicesViewModels { get; set; }
     }
 }

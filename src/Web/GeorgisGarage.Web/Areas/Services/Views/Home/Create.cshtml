@@ -1,0 +1,74 @@
+﻿@model GeorgisGarage.Web.Areas.Services.Models.CreateServiceViewModel
+@{
+    ViewData["Title"] = "Създай услуга";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="text-center">Create Service</h1>
+<hr class="hr-2 bg-secondary half-width" />
+<form class="mx-auto half-width" asp-area="Services" asp-controller="Home" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <label style="font-size: 200%" asp-for="ServiceName"></label>
+            <input asp-for="ServiceName" class="form-control" />
+            <span asp-validation-for="ServiceName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-4 d-flex flex-column align-items-center">
+            <label asp-for="StartedTime"></label>
+            <input asp-for="StartedTime" class="form-control" />
+            <span asp-validation-for="StartedTime" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-4 d-flex flex-column align-items-center">
+            <label asp-for="EndTime"></label>
+            <input asp-for="EndTime" class="form-control" />
+            <span asp-validation-for="EndTime" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-2 d-flex flex-column align-items-center">
+            <label asp-for="ServiceTime"></label>
+            <input asp-for="ServiceTime" class="form-control" />
+            <span asp-validation-for="ServiceTime" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <label asp-for="Description"></label>
+            <textarea rows="10" asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <label asp-for="Video"></label>
+            <input asp-for="Video" class="form-control" />
+            <span asp-validation-for="Video" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-group col-4">
+            <label asp-for="CoverPhoto" class="control-label"></label>
+            <input asp-for="CoverPhoto" class="form-control" />
+            <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+        </div>
+        <div class="col-6 ">
+            <br />
+            <div class="row"><h4>Материал: &nbsp; </h4><partial name="_CreateServiceMaterialRatingPartial" /></div>
+            <div class="row"><h4>Изпълнение: &nbsp; </h4><partial name="_CreateServicePerformanceRatingPartial" /></div>
+            <div class="row"><h4>Време: &nbsp; </h4><partial name="_CreateServiceTimeRatingPartial" /></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label asp-for="Images" class="control-label"></label>
+                <input asp-for="Images" class="form-control" />
+                <span asp-validation-for="Images" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn ride-bg-color">Създай</button>
+    </div>
+</form>

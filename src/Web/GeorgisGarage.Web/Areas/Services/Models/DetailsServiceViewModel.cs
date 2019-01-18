@@ -32,11 +32,11 @@ namespace GeorgisGarage.Web.Areas.Services.Models
 
         public DateTime PostedOn { get; set; }
 
-        public int SurfaceRating { get; set; }
+        public int MaterialRating { get; set; }
 
-        public int ViewRating { get; set; }
+        public int PerformanceRating { get; set; }
 
-        public int PleasureRating { get; set; }
+        public int TimeRating { get; set; }
 
         //Comments Section
 
