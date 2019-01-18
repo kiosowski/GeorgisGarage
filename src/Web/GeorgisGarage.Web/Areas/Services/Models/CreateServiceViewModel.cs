@@ -28,7 +28,7 @@ namespace GeorgisGarage.Web.Areas.Services.Models
 
         [Display(Name = "Времетраене")]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter valid service time.")]
-        public double TripLength { get; set; }
+        public double ServiceTime { get; set; }
 
         //public virtual ICollection<Image> Photos { get; set; }
 

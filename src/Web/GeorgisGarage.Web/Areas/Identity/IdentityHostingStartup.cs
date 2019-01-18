@@ -8,7 +8,7 @@ namespace GeorgisGarage.Web.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureSerces((context, services) => {
+            builder.ConfigureServices((context, services) => {
             });
         }
     }

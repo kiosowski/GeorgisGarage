@@ -1,4 +1,4 @@
-﻿@model DetailsServicesViewModel
+﻿@model DetailsServiceViewModel
 <div class="card-container">
     @{ var counter = 1;}
     @foreach (var comment in this.User.IsInRole("Admin") || this.User.IsInRole("Owner") ? Model.CommentsViewModel : Model.CommentsViewModel.Where(x => x.IsDeleted == false))

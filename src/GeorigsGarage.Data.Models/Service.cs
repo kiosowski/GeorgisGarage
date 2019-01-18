@@ -48,7 +48,7 @@ namespace GeorigsGarage.Data.Models
         {
             get
             {
-                int sum = ViewRating + SurfaceRating + PleasureRating;
+                int sum = MaterialRating + PerformanceRating + TimeRating;
                 double average = (double)sum / AverageRatingCountDivider;
                 return _averagePosterRating = average;
             }
@@ -56,11 +56,11 @@ namespace GeorigsGarage.Data.Models
         }
 
 
-        public int ViewRating { get; set; }
+        public int MaterialRating { get; set; }
 
-        public int SurfaceRating { get; set; }
+        public int PerformanceRating { get; set; }
 
-        public int PleasureRating { get; set; }
+        public int TimeRating { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 

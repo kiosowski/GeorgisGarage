@@ -57,8 +57,8 @@ namespace GeorgisGarage.Web.Areas.Services.Controllers
 
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var result = this.servicesService.Create(model.ServiceName, model.StartedTime, model.EndTime, model.TripLength, model.Description,
-                   model.Video, userId, model.CoverPhoto, model.Images, model.View, model.Surface, model.Pleasure);
+            var result = this.servicesService.Create(model.ServiceName, model.StartedTime, model.EndTime, model.ServiceTime, model.Description,
+                   model.Video, userId, model.CoverPhoto, model.Images, model.Material, model.Time, model.Performance);
 
             if (!result)
             {
@@ -112,8 +112,8 @@ namespace GeorgisGarage.Web.Areas.Services.Controllers
 
 
             var result = this.servicesService.Edit(model.Id, model.ServiceName, model.StartedTime, model.EndTime,
-                model.ServiceTime, model.Description, model.Video, model.CoverPhoto, model.ViewRating, model.SurfaceRating,
-                model.PleasureRating);
+                model.ServiceTime, model.Description, model.Video, model.CoverPhoto, model.TimeRating, model.PerformanceRating,
+                model.MaterialRating);
 
             return this.RedirectToAction("Index", "Home");
         }

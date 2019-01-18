@@ -35,8 +35,8 @@ namespace GeorgisGarage.Services
         
 
         public bool Edit(string serviceId, string serviceName, string startTime, string endTime, double serviceTime,
-            string description, string video, IFormFile imageFromForm, int viewRating, int surfaceRating,
-            int pleasureRating)
+            string description, string video, IFormFile imageFromForm, int timeRating, int performanceRating,
+            int materialRating)
         {
             if (serviceName == null || startTime == null || endTime == null || serviceTime == 0.00 ||
                 description == null)
@@ -57,9 +57,9 @@ namespace GeorgisGarage.Services
             service.StartedTime = startTime;
             service.EndTime = endTime;
             service.ServiceTime = serviceTime;
-            service.SurfaceRating = surfaceRating;
-            service.ViewRating = viewRating;
-            service.PleasureRating = pleasureRating;
+            service.TimeRating = timeRating;
+            service.PerformanceRating = performanceRating;
+            service.MaterialRating = materialRating;
 
             if (service.Video != video)
             {
@@ -98,7 +98,7 @@ namespace GeorgisGarage.Services
 
         public bool Create(string serviceName, string startTime, string endTime, double serviceTime,
             string description, string video, string userId, IFormFile imageFromForm, ICollection<IFormFile> photos,
-            int viewRating, int surfaceRating, int pleasureRating)
+            int timeRating, int performanceRating, int materialRating)
         {
             if (serviceName == null || startTime == null || endTime == null || serviceTime == 0.00 ||
                 description == null || userId == null || imageFromForm == null)
@@ -134,9 +134,9 @@ namespace GeorgisGarage.Services
                 Video = embedYoutubeUrl,
                 UserId = userId,
                 Photos = imageList,
-                SurfaceRating = surfaceRating,
-                ViewRating = viewRating,
-                PleasureRating = pleasureRating
+                TimeRating = timeRating,
+                PerformanceRating = performanceRating,
+                MaterialRating = materialRating
             };
 
             context.Services.Add(service);

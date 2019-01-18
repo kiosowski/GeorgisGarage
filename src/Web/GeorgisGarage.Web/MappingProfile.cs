@@ -36,7 +36,7 @@ namespace GeorgisGarage.Web
                             c => c.MapFrom(x => x.CoverPhoto.Image))
                 .ForMember(x => x.Images, c => c.MapFrom(x => x.Photos))
                 .ForMember(x => x.PostedBy, c => c.MapFrom(x => x.User))
-                .ForMember(x => x.ViewRating, c => c.MapFrom(x => x.ViewRating))
+                .ForMember(x => x.TimeRating, c => c.MapFrom(x => x.TimeRating))
                 .ForMember(x => x.CommentsViewModel, c => c.MapFrom(x => x.Comments))
                 //.ForMember(x=>x.CommentsViewModel.Select(z=>z.ReplyViewModel),c=>c.MapFrom(x=>x.Comments.Select(y=>y.Replies)))
                 .ReverseMap();
